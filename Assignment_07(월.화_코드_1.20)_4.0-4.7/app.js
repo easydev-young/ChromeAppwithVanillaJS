@@ -51,7 +51,8 @@ function onLoingSubmit(tomato) {
 
 // loginButton.addEventListener("click", onLoginBtnClick);
 
-function paintGreetings(username) {
+function paintGreetings() {
+    const username = localStorage.getItem(USERNAME_KEY);
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
@@ -64,5 +65,5 @@ if (savedUsername === null) {
     loginForm.addEventListener("submit", onLoingSubmit);
 } else {
     // show the greetings
-    paintGreetings(savedUsername);
+    paintGreetings();
 }
