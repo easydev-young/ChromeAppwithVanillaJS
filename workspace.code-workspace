@@ -8,5 +8,7 @@
       "path": "..\\CocoaTalkCloneCoding"
     }
   ],
-  "settings": {}
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "CocoaTalkCloneCoding"
+  }
 }
