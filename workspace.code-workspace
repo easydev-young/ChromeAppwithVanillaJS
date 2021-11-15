@@ -1,8 +1,14 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "name": "CocoaTalkCloneCoding",
+      "path": "..\\CocoaTalkCloneCoding"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "CocoaTalkCloneCoding"
+  }
 }
