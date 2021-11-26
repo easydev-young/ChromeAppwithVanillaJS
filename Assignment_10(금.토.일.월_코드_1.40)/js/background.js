@@ -1,12 +1,28 @@
-const images = ["0.jpg", "1.jpg", "2.jpg"];
+const imageFrom = document.getElementById("image-form");
+const imageInput = document.querySelector("#image-form input");
 
-const colorfullImage = images[Math.floor(Math.random() * images.length)];
+function getRandomImage(keyword) {
+    let imageUrl = 'https://source.unsplash.com/random/1600x900';
 
-console.log(colorfullImage);
+    if (keyword != "" && keyword != null) {
+        imageUrl = `https://source.unsplash.com/featured/?${keyword.toLowerCase()}`;
+    }
 
-const bgImage = document.createElement("img");
-bgImage.src = `img/${colorfullImage}`;
+    fetch(imageUrl)
+        .then((response) => {
+            document.body.style.backgroundImage = `url(${response.url})`;
+        });
+}
 
-console.log(bgImage);
 
-document.body.appendChild(bgImage);
+function handleImageSubmit(event) {
+    event.preventDefault();
+    const keyword = imageInput.value;
+
+    imageInput.value = "";
+    getRandomImage(keyword);
+}
+
+imageFrom.addEventListener("submit", handleImageSubmit);
+
+getRandomImage(null);

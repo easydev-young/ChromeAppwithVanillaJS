@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="img/Todo.png" />
+</head>
+
+<body>
+    <div id="weather">
+        <span></span>
+        <span></span>
+    </div>
+    <header class="todoHeader">
+        <div class="todoHeader__weather niceBox">
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <main class="todoMain">
+        <div class="todoMain__loging niceBox hidden">
+            <form id="login-form">
+                <input required maxlength="15" value="" type="text" placeholder="What is your name?" />
+                <input type="submit" value="Log In" />
+            </form>
+        </div>
+        <div class="todoMain__greeting niceBox hidden">
+            <h1 id="greeting"></h1>
+            <form id="todo-form">
+                <input required minlength="1" maxlength="30" type="text" placeholder="Write a To Do and Press Enter">
+            </form>
+            <form id="image-form">
+                <input required minlength="1" maxlength="30" type="text"
+                    placeholder="Background keywords. beach, nature">
+            </form>
+        </div>
+    </main>
+    <div class="todo-clock-box">
+        <div class="todo">
+            <div class="todoMain__todo-list  hidden">
+                <ul id="todo-list"></ul>
+            </div>
+        </div>
+
+        <div class="clockBox niceBox">
+            <div class="clockBox__clock"><span class="c1"></span><span class="c2"></span></div>
+            <div><span class="d1"></span><span class="d2"></span></div>
+        </div>
+    </div>
+
+
+    <script src="js/app.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+
+</html>
+
+<!-- 
+
+
+1.브라우저에서 실시간으로 보이는 시계를 만들어야 합니다. 참고 자료 - #5 CLOCK
+2.로컬 스토리지를 사용해 사용자 이름을 이용한 로그인 기능이 필요합니다. 참고 자료 - #4 LOGIN
+3.로컬 스토리지를 사용한 투두리스트 기능이 필요합니다. 투두리스트는 새로 고침을 해도 지워지지 않아야 합니다. 참고 자료 - #7 TO DO LIST
+4.배경 이미지가 랜덤하게 나타나야 합니다. 참고 자료 - #6 QUOTES AND BACKGROUND
+5.위치 API를 사용해 현재 위치와 그에 맞는 날씨를 출력해야 합니다. 참고 자료 - #8 WEATHER -->

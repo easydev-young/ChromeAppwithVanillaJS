@@ -1,23 +1,42 @@
-const clock = document.querySelector("h2#clock");
+const c1 = document.querySelector(".clockBox .c1");
+const c2 = document.querySelector(".clockBox .c2");
+const d1 = document.querySelector(".clockBox .d1");
+const d2 = document.querySelector(".clockBox .d2");
 
-// function sayHello() {
-//     console.log("hello");
-// }
-
-function getClock() {
-    const date = new Date();
-    // console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
-    // clock.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-
-    const hours = String(date.getHours()).padStart(2, "0");
-    const minutes = String(date.getMinutes()).padStart(2, "0");
-    const seconds = String(date.getSeconds()).padStart(2, "0");
-
-    clock.innerText = `${hours}:${minutes}:${seconds}`;
-
+function whenIsThis(nowHour) {
+    if (nowHour <= 12 && nowHour >= 6) {
+        return "오전";
+    } else if (nowHour >= 12 && nowHour < 22) {
+        return "오후";
+    } else if (nowHour >= 22 && nowHour <= 24) {
+        return "밤";
+    } else {
+        return "새벽";
+    }
 }
 
-getClock(); // 로딩과 함께 보여주기 위해
+function getClock() {
+    const today = new Date();
+
+    const hours = String(today.getHours()).padStart(2, "0");
+    const minutes = String(today.getMinutes()).padStart(2, "0");
+    const seconds = String(today.getSeconds()).padStart(2, "0");
+
+
+    const dateString = today.toLocaleDateString('ko-KR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+    const dayName = today.toLocaleDateString('ko-KR', {
+        weekday: 'long',
+    });
+
+    c2.innerText = `(${whenIsThis(hours)})`;
+    c1.innerText = `${hours}:${minutes}:${seconds}`;
+    d1.innerText = dateString;
+    d2.innerText = `(${dayName})`;
+}
+
+getClock();
 setInterval(getClock, 1000);
-// setInterval(sayHello, 5000);
-// setTimeout(sayHello, 5000);
